@@ -1,0 +1,101 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: sans-serif;
+	background-color: #444;
+}
+
+.clip_me {
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.header_container {
+	margin-top: 60px;
+	clip-path: polygon(0% 30%, 100% 0%, 100% 50%, 0% 80%);
+	background-image: url("/images/header.jpg");
+	box-sizing: border-box;
+	
+	position: relative;
+	
+	/* Following three lines vertically center the header title
+	display: flex;
+	flex-direction: column;
+	justify-content: center;*/
+	
+	height: 400px;
+}
+
+.header_title {
+	text-align: center;
+	font-size: 3em;
+	color: white;
+	
+	/*
+		This vertically centers the title in the div.
+	*/
+	position: absolute;
+	top: 40%;
+	transform: translatey(-40%);
+	
+	/*
+		This horizontally centers the title in the div.
+		In an absolute positioned element margin: 0 auto does not work
+		unless you specify left/right as 0.
+	*/
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+
+}
+
+.nav_menu {
+	/*
+		This makes the three bars for the nav menu.
+		Not completely sure what makes it work,
+		but I know how to put it there and how to edit it now,
+		even if the mechanics are not yet clear.
+		Elucidation is on the TODO list now.
+	*/
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding-left: 15px;
+	margin-top: 15px;
+	
+	box-sizing: border-box;
+}
+
+.nav_menu:before {
+	/*
+		Width: controls how hide the bars are going to be
+		Height: height of the three bar nav menu
+			NEEDS TO BE THE SAME AS border-bottom TO HAVE EQUAL SPACING BEWTEEN TOP TWO AND THIRD LINE
+			
+		Border-Top: This needs to be double, it is the first two of the three lines
+		Border-Bottom: Sets the third bar on the screen
+			NEEDS TO BE THE SAME AS height TO HAVE EQUAL SPACING BEWTEEN TOP TWO AND THIRD LINE
+	*/
+	position: absolute;
+	content: "";
+	top: 0.25em;
+	left: 0;
+	width: 2em;
+	height: .35em;
+
+	border-top: 1em double #FFF;
+	border-bottom: .35em solid #FFF;
+	border-radius: 3px;
+}
+
+.nav_menu:before {
+	margin-left: 20px;
+}
+
+.blue_background {
+	background-color: #0000FF;
+}
+
+.red_border {
+	border: 4px solid red;
+}
